@@ -22,7 +22,11 @@ app.use('/', require('./routes/index.js'));
 app.use('/todolist', todolist);
  
 // サーバーをポート 3000 で起動
-app.listen(3000);
- 
+//app.listen(3000);
+var port = process.env.PORT || 3000;
+app.listen(port, function(){
+  console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+});
+
 // アプリケーション開始ログ
 console.log('Server running at http://localhost:3000');
