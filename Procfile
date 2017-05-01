@@ -1,4 +1,3 @@
-web: node index
 {
   "name": "my-todolist",
   "version": "1.0.0",
