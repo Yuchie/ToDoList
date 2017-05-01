@@ -1,0 +1,1 @@
+$(document).ready(document_onready);

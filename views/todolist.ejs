@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang = "ja">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title><%= title %></title>
+		<link rel="stylesheet" href="/public/third_party/bootstrap/dist/css/bootstrap.css" />
+		<link rel="stylesheet" href="/public/stylesheets/todolist.css" />
+	</head>
+	<body>
+    	<nav class="navbar navbar-inverse navbar-fixed-top">
+      		<div class="container">
+        		<div class="navbar-header">
+          			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            			<span class="sr-only">Toggle navigation</span>
+            			<span class="icon-bar"></span>
+            			<span class="icon-bar"></span>
+            			<span class="icon-bar"></span>
+          			</button>
+          			<a class="navbar-brand" href="#">My ToDoList</a>
+        		</div>
+        		<div id="navbar" class="collapse navbar-collapse">
+          			<ul class="nav navbar-nav">
+            			<li><a href="../">Home</a></li>
+            			<li class="active"><a href="/">ToDoList</a></li>
+            			<li><a href="../contact">Contact</a></li>
+          			</ul>
+        		</div>
+      		</div>
+    	</nav>
+
+    	<div class="container">
+    		<div class="row">
+                <form action="./todolist" method="post">
+                    <br>
+                    <h1>ToDoList</h1>
+                    <p><%= message %></p>
+                    <br>
+                    <div class="input-group">
+                        <input type="text" name="task" class="form-control" placeholder="input task here">
+                        <span class="input-group-btn">
+                            <button type="button" class="btn btn-default">add</button>
+                        </span>
+                    </div>
+                    <br>
+                </form>
+                <ul class="main-list">
+                    <% boardList.forEach(function(boardItem) { %>
+                    <li class="main-list__item">
+                        <div class="checkbox">
+                            <form action="/" method="post" class="check">
+                                <label><input type="checkbox" value="" <% if (boardItem.status != 0) { %>checked="checked"<% } %>><%= boardItem.title %></label>
+                            </form>
+                        </div>
+                    </li>
+                    <% }); %>
+                </ul>
+            </div>
+        </div>
+    	<script type="text/javascript" src="/public/third_party/jquery/dist/jquery.js"></script>
+    	<script type="text/javascript" src="/public/third_party/bootstrap/dist/js/bootstrap.js"></script>
+    	<script type="text/javascript" src="/public/javascripts/todolist.js"></script>
+    </body>
+</html>

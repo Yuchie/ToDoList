@@ -1,0 +1,21 @@
+{
+  "name": "my-todolist",
+  "description": "my first to-do-list",
+  "main": "app.js",
+  "authors": [
+    "Yuchie"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Yuchie/ToDoList",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "2",
+    "bootstrap": "^3.3.7"
+  }
+}
